@@ -1,0 +1,45 @@
+Setting up app:
+
+Add gems:
+
+  gem 'bootstrap-sass'
+  gem 'font-awesome-rails'
+  gem 'stamp'
+  gem 'simple_form'
+  gem 'annotate'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+
+Bundle to install gems and dependencies
+
+In console, 'yarn add jquery' to get jquery in the app
+
+In /app/assets/javascripts/application.js, add this at top so that jquery and bootstrap will be in the asset pipeline:
+
+  //= require jquery
+  //= require bootstrap-sprockets
+
+Rename /app/assets/stylesheets/application.css to application.css.scss, then remove:
+
+  *= require_tree .
+  *= require_self
+
+Import styles to /app/assets/stylesheets/application.css.scss since you removed the require_tree and require_self calls:
+
+  @import 'bootstrap-sprockets';
+  @import 'bootstrap';
+  @import 'font-awesome';
+
+  *** Note that any new stylesheets will now need to be imported in this file! You can't depend on asset pipeline to pick them up otherwise.
+
+Setup simple form:
+
+  rails generate simple_form:install --bootstrap
+
+  *** Must use generate, not g!
+
+Setup annotate:
+
+  rails generate annotate:install
+  In lib/tasks/auto_annotate_models.rake, change 'before' to 'after'. This makes the annotations in the model appear after the model declaration, instead of before.
+
