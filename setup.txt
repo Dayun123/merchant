@@ -43,3 +43,6 @@ Setup annotate:
   rails generate annotate:install
   In lib/tasks/auto_annotate_models.rake, change 'before' to 'after'. This makes the annotations in the model appear after the model declaration, instead of before.
 
+git add, git commit
+git checkout master
+git merge --no-ff feature/gems
