@@ -39,6 +39,7 @@ gem 'stamp'
 gem 'simple_form'
 gem 'annotate'
 gem 'paperclip', '~> 5.0.0'
+gem 'devise'
 
 
 group :development, :test do

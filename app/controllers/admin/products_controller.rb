@@ -1,4 +1,7 @@
 class Admin::ProductsController < ApplicationController
+
+  # Checks for logged in users, unless the index or show view
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
