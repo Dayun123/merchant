@@ -5,6 +5,15 @@ class Product < ApplicationRecord
   has_attached_file :avatar, styles: { medium: '300x300', thumb: '100x100>' }, default_url: "missing_:style.png"
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  validates :name, presence: true, uniqueness: { scope: :brand_id }
+  validates :price, numericality: { greater_than_or_equal_to: 0 }
+  validates :quantity, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :description, presence: true, length: { minimum: 15 }
+  validates :reviews, length: { minimum: 15 }
+
+  validates :brand, :category, presence: true
+
 end
 
 # == Schema Information
