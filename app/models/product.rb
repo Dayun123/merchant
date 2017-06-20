@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   validates :name, presence: true, uniqueness: { scope: :brand_id }
-  validates :price, numericality: { greater_than_or_equal_to: 0 }
+  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :quantity, numericality: { greater_than_or_equal_to: 0, only_integer: true }
   validates :description, presence: true, length: { minimum: 15 }
   validates :reviews, length: { minimum: 15 }

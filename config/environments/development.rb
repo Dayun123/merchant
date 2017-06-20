@@ -31,6 +31,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Devise config for mailer
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -54,4 +57,5 @@ Rails.application.configure do
 
   # This lets paperclip know where to find ImageMagick so that it can use it to work with images.
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
 end
