@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'admin/products#index'
+  get '/shop' => 'storefront#index'
+
+  get '/about' => 'storefront#about'
+
+  root 'storefront#index'
 
   devise_for :users
   namespace :admin do

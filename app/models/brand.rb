@@ -1,7 +1,7 @@
 class Brand < ApplicationRecord
   has_many :products
 
-  validates :name, presence: true, length: { minimum: 5 }, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end
 
 # == Schema Information
