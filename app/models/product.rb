@@ -14,6 +14,11 @@ class Product < ApplicationRecord
 
   validates :brand, :category, presence: true
 
+
+  def self.search_by_name_or_description(search_term)
+    where("name LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%")
+  end
+
 end
 
 # == Schema Information
