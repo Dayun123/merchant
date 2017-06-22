@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170622141255) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "quantity"
+    t.integer "quantity", default: 1
     t.decimal "price"
     t.integer "cart_id"
     t.datetime "created_at", null: false

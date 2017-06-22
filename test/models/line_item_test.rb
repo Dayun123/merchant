@@ -12,7 +12,7 @@ end
 #
 #  id         :integer          not null, primary key
 #  product_id :integer
-#  quantity   :integer
+#  quantity   :integer          default(1)
 #  price      :decimal(, )
 #  cart_id    :integer
 #  created_at :datetime         not null
