@@ -4,10 +4,17 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  # WillPaginate.per_page = 10
+
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:q]
+      @products = Product.search_by_name_or_description(params[:q])
+    else
+      @products = Product.all
+      @products = @products.paginate(:page => params[:page], :per_page => 4)
+    end
   end
 
   # GET /products/1

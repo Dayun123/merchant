@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= will_paginate @products %>
+
 <h1>Products</h1>
+
+<%= form_tag(admin_products_path, method: 'get') do %>
+  <%# TODO: SR-Only for label tag  %>
+  <%#label_tag :q %>
+  <%= text_field_tag :q %>
+  <%= submit_tag('Search') %>
+<% end -%>
 
 <table class="table">
   <thead>
