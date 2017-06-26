@@ -4,6 +4,20 @@ class LineItemsController < ApplicationController
 
   before_action :set_cart
 
+  def edit
+    @line_item = LineItem.find(params[:id])
+  end
+
+  def update
+    @line_item = LineItem.find(params[:id])
+
+    if @line_item.update(quantity: params[:line_item][:quantity])
+      redirect_to edit_cart_path
+    else
+      render :edit
+    end
+  end
+
   def create
     product = Product.find(params[:product_id])
     # We created add_product in the Cart model, it basically will return the product to add to the line item or update the quantity if the product already exists in the cart.

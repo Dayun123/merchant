@@ -21,6 +21,7 @@
         <td><%= number_to_currency(item.price) %></td>
         <td><%= number_to_currency(item.total_price) %></td>
         <td><%= link_to 'Destroy Item', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Item Quantity', edit_line_item_path(item) %></td>
       </tr>
     <% end -%>
   </tbody>
