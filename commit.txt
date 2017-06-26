@@ -1,7 +1,11 @@
 Commit message
 
-Create Order model.
+Add checkout functionality.
 
-Add order reference to line items table.
-Setup associations between Orders and LineItems.
-Setup associations between Orders and Users.
+Add RESTful routes for Orders (only new, create, show).
+Create controller for Orders.
+Add num items in shopping cart to nav.
+Edit new view for orders controller.
+Create form partial for filling out new orders.
+Add payment types to order model.
+Add validations to order model.

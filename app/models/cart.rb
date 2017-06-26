@@ -12,6 +12,10 @@ class Cart < ApplicationRecord
     # sub_total
   end
 
+  def self.num_items
+    LineItem.all.length
+  end
+
   # Makes it so we can update our quantity if a product is already in the cart.
   def add_product(product_id)
     product = Product.find(product_id)
