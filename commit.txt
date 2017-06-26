@@ -1,10 +1,3 @@
 Commit message
 
-Add 'My Order History' link to nav.
-Add irbtools to Gemfile
-
-Add index action to OrdersController.
-Add index view to orders views.
-Add ability to view order to orders views.
-Add show action to OrdersController.
-Add show view to orders views.
+Made account nav_link a dropdown with Edit Account and View Order History as options.
