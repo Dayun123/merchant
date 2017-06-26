@@ -10,6 +10,13 @@ class Order < ApplicationRecord
 
   validates :pay_type, inclusion: PAYMENT_TYPES, presence: true
 
+  def add_line_items_from_cart(cart)
+    cart.line_items.each do |line_item|
+      line_item.cart_id = nil
+      # Since we declared a has_many relationship with line_items, that is what this line_items represents.
+      line_items << line_item
+    end
+  end
 
 end
 

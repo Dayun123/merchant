@@ -6,6 +6,7 @@ class LineItemsController < ApplicationController
 
   def create
     product = Product.find(params[:product_id])
+    # We created add_product in the Cart model, it basically will return the product to add to the line item or update the quantity if the product already exists in the cart.
     @line_item = @cart.add_product(product.id)
 
     if @line_item.save
@@ -13,7 +14,7 @@ class LineItemsController < ApplicationController
       redirect_to shop_path
     else
       flash.now[:alert] = "Couldn't add item to your cart."
-      redirect_to :back
+      redirect_back(fallback_location:shop_path)
     end
   end
 

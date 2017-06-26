@@ -1,11 +1,6 @@
 Commit message
 
-Add checkout functionality.
-
-Add RESTful routes for Orders (only new, create, show).
-Create controller for Orders.
-Add num items in shopping cart to nav.
-Edit new view for orders controller.
-Create form partial for filling out new orders.
-Add payment types to order model.
-Add validations to order model.
+Add create action to orders controller.
+Add method to order model to remove all items from cart and add to the order.
+Make associations between LineItems and Carts/Orders optional, because you can't create a LineItem without these assocations present otherwise.
+Fix Shopping Cart display in navbar, it still doesn't display numbers.

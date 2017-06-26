@@ -1,7 +1,8 @@
 class LineItem < ApplicationRecord
   belongs_to :product
-  belongs_to :cart
-  belongs_to :order
+  belongs_to :cart, optional: true
+  # This is super important, you can't create a line item without an order if you don't do this.
+  belongs_to :order, optional: true
 
   def total_price
     price * quantity
