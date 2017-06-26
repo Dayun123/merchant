@@ -4,6 +4,8 @@ class LineItem < ApplicationRecord
   # This is super important, you can't create a line item without an order if you don't do this.
   belongs_to :order, optional: true
 
+  validates :quantity, numericality: { greater_than_or_equal_to: 0 }
+
   def total_price
     price * quantity
   end
