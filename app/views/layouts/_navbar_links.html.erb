@@ -27,7 +27,7 @@
   </ul>
 
   <ul class="nav navbar-nav navbar-right">
-    <li><%= link_to '( ' + Cart.num_items.to_s + ' ) Shopping Cart', edit_cart_path %></li>
+    <li><%= link_to '( ' + Cart.all.length.to_s + ' ) Shopping Cart', edit_cart_path %></li>
     <% if user_signed_in? %>
       <li><%= link_to 'Account', edit_user_registration_path %></li>
       <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
