@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   end
 
   resource :cart, only: [:edit, :update, :destroy]
-
-  resources :line_items, only: [:create, :destroy ]
+  resources :line_items, only: [:create, :destroy]
+  resources :orders, only: [:new, :create, :show]
 
   # scope module: 'admin', path: 'admin' do
   #   resources :products

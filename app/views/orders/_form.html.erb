@@ -1,0 +1,15 @@
+<%= simple_form_for(@order) do |f| %>
+  <%# Handles displaying errors, much easier than hard coding!  %>
+  <%= f.error_notification %>
+  <div class="form-inputs form-group">
+    <%= f.input :name, placeholder: 'Bob Ross' %>
+    <%= f.input :address, placeholder: "123 Happy St.\nNew Orleans, LA 70125" %>
+    <%# Order::PAYMENT_TYPES grabs the constant PAYMENT_TYPES that lives in the Order class. You don't preface PAYMENT_TYPES with @ or @@, read up on this.  %>
+    <%= f.input :pay_type, collection: Order::PAYMENT_TYPES, prompt: 'Select a payment method.' %>
+  </div>
+
+  <div class="form-actions form-group">
+    <%= f.submit 'Place Order', class: 'btn btn-sm btn-danger' %>
+  </div>
+
+<% end -%>
