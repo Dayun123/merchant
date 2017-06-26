@@ -1,6 +1,3 @@
 Commit message
 
-Fix shopping cart in nav section.
-
-Got it to display the correct number of items in the cart.
-Added a before_action and method to the application controller to get the number of items for the current cart in the current session, and passed that as an instance variable to the layout.
+Made account nav_link a dropdown with Edit Account and View Order History as options.

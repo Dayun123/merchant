@@ -50,8 +50,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'pry-byebug'
-  gem 'pry-rails'
+  # gem 'pry-byebug'
+  # gem 'pry-rails'
+  gem 'irbtools-more', require: 'irbtools/binding'
 end
 
 group :development do
