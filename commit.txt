@@ -1,6 +1,6 @@
 Commit message
 
-Add create action to orders controller.
-Add method to order model to remove all items from cart and add to the order.
-Make associations between LineItems and Carts/Orders optional, because you can't create a LineItem without these assocations present otherwise.
-Fix Shopping Cart display in navbar, it still doesn't display numbers.
+Fix shopping cart in nav section.
+
+Got it to display the correct number of items in the cart.
+Added a before_action and method to the application controller to get the number of items for the current cart in the current session, and passed that as an instance variable to the layout.
