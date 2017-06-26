@@ -1,0 +1,7 @@
+Commit message
+
+Create Order model.
+
+Add order reference to line items table.
+Setup associations between Orders and LineItems.
+Setup associations between Orders and Users.
