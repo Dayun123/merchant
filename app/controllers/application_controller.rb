@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def num_cart_items
     if session[:cart_id]
       # Get the cart associated with this session, then create an array of the quantities of each line item, then sum this to get the total items in the cart.
-      @num_items = Cart.find(session[:cart_id]).line_items.map { |item| item.quantity }.sum.to_s
+      @num_items = Cart.find(session[:cart_id]).line_items.sum(:quantity)
     else
       @num_items = '0'
     end
