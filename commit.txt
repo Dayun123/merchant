@@ -1,6 +1,10 @@
 Commit message
 
-Fix shopping cart in nav section.
+Add 'My Order History' link to nav.
+Add irbtools to Gemfile
 
-Got it to display the correct number of items in the cart.
-Added a before_action and method to the application controller to get the number of items for the current cart in the current session, and passed that as an instance variable to the layout.
+Add index action to OrdersController.
+Add index view to orders views.
+Add ability to view order to orders views.
+Add show action to OrdersController.
+Add show view to orders views.

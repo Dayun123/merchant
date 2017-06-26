@@ -2,7 +2,13 @@ class OrdersController < ApplicationController
 
   include CurrentCart
   before_action :authenticate_user!
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart, only: [:new, :create, :index]
+
+  def index
+    # Find all the orders in the DB with the current user ID
+    @orders = Order.where(user_id: current_user.id)
+    @user_email = current_user.email
+  end
 
   def new
 
@@ -35,6 +41,10 @@ class OrdersController < ApplicationController
   end
 
   def show
+    # Find the LineItems associated with the order id
+    @line_items = LineItem.where(order_id: params[:id])
+    @order_subtotal = LineItem.where(order_id: params[:id]).select("SUM(quantity * price) AS sum")[0].sum
+    @order_details = params[:order_details]
   end
 
   private
