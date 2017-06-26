@@ -1,0 +1,10 @@
+<h1>Line Items Edit page</h1>
+
+<%= @line_item.inspect %>
+
+<%= simple_form_for @line_item, method: :patch do |f| %>
+  <%= f.input :product_id, label: 'Product Id', disabled: true %>
+  <%= f.input :quantity %>
+  <%= f.input :price, disabled: true %>
+  <%= f.button :submit %>
+<% end -%>

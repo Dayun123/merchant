@@ -1,3 +1,8 @@
 Commit message
 
-Made account nav_link a dropdown with Edit Account and View Order History as options.
+Add edit line items functionality to cart/edit view.
+
+Add edit and update routes to routes.rb.
+Add edit and update actions to line_items_controller.
+Create edit view for line_items.
+Create a simple form for editing line items.
