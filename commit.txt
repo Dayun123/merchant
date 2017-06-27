@@ -1,6 +1,3 @@
 Commit message
 
-Fix num items in shopping cart (navbar).
-  - Originally the shopping cart was only showing the number
-    of unique items in the cart, NOT the total quantity of
-    items. Fixed this through using the magic of map().
+Change sub_total method on the cart to use :sum symbol because it is clearer.

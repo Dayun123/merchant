@@ -3,7 +3,8 @@ class Cart < ApplicationRecord
 
   def sub_total
 
-    line_items.select("SUM(quantity * price) AS sum")[0].sum
+    # Runs the SQL query and stores the SUM of the quantity and price of each line item in a property :sum (the AS sum portion). An array is returned (with one LineItem object), so we grab it ([0]) and select the :sum property on it.
+    line_items.select("SUM(quantity * price) AS sum")[0][:sum]
 
     # sub_total = 0.0
     # line_items.each do |item|
