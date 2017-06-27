@@ -4,6 +4,10 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  rescue_from 'ActiveRecord::InvalidForeignKey' do |e|
+    redirect_to admin_products_url, notice: "Could not delete product: #{@product.name} because it is associated with a LineItem from a previous order."
+  end
+
   # WillPaginate.per_page = 10
 
   # GET /products
@@ -64,7 +68,13 @@ class Admin::ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+
+
+
     @product.destroy
+
+
+
     respond_to do |format|
       format.html { redirect_to admin_products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
