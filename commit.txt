@@ -1,3 +1,3 @@
- Commit message
+  Commit message
 
 Change sub_total method on the cart to use :sum symbol because it is clearer.
